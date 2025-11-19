@@ -1,0 +1,152 @@
+:root{
+  --bg: #fcf4Eb;
+  --jumbotron-bg: #00352D;
+  --accent: #FF4800;
+  --white: #ffffff;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background-color:var(--bg);
+  color:#222;
+  line-height:1.5;
+}
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:1rem;
+}
+.site-header{
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  background:transparent;
+}
+.brand{
+  display:inline-block;
+  margin:0;
+}
+.brand .course{font-weight:600}
+.brand .logo{
+  height:40px;
+  display:block;
+}
+.nav-logo{
+  height:70px; /* större logga i navbar */
+  width:auto;
+}
+.nav{display:block}
+
+.jumbotron{
+  background-color:var(--jumbotron-bg);
+  color:var(--white);
+  padding:2.5rem 0;
+  border-radius:6px;
+  margin:1.25rem 0;
+}
+.jumbotron .lead{opacity:0.95}
+
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:0.5rem 0.9rem;
+  border-radius:6px;
+  background:var(--accent);
+  color:var(--white);
+  font-weight:600;
+}
+.btn:hover{filter:brightness(0.95)}
+
+.two-col{display:grid; grid-template-columns:2fr 1fr; gap:1rem; align-items:start}
+.card{background:rgba(255,255,255,0.9); padding:1rem; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+
+.student-content{display:flex; gap:1rem; align-items:flex-start}
+.student-img{width:120px; height:120px; border-radius:8px; flex:0 0 120px; background:#fff}
+.student-text p{margin-top:0}
+
+.fact-box{border-left:6px solid var(--accent); padding:0.6rem; font-size:0.95rem}
+.fact-box h3{margin-top:0; font-size:1rem}
+.fact-box ul{margin:0.35rem 0; padding-left:1rem}
+
+.site-footer{margin-top:2rem; padding:1rem 0; text-align:center; color:rgba(0,0,0,0.6)}
+
+@media (max-width:800px){
+  .two-col{grid-template-columns:1fr;}
+  .nav{float:none; margin-top:0.5rem}
+  .student-content{flex-direction:column; align-items:center}
+  .student-img{width:160px;height:160px}
+}
+
+@media (max-width:600px){
+  .nav-logo{height:44px}
+}
+
+/* Navbar styles */
+.site-header .container{display:flex; align-items:center; justify-content:space-between; gap:1rem}
+.main-nav{
+  background: var(--bg);
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding-left:1.75rem; /* flytta loggan lite mer från kanten */
+  padding-right:1.25rem; /* ge utrymme till höger så sista menyposten inte sitter i kanten */
+}
+.nav-list{list-style:none; margin:0; padding:0.35rem 0; display:flex; gap:1.4rem; margin-left:auto}
+.nav-item{margin:0; position:relative; display:flex; align-items:center; gap:0}
+.nav-link{color: #222; text-decoration:none; padding:0.35rem 0.2rem 0.35rem 0.2rem; border-radius:6px; display:inline-flex; align-items:center}
+.nav-link:hover{color:var(--accent)}
+
+.dropdown-caret{
+  background:transparent;
+  border:0;
+  padding:0 0.08rem;
+  margin-left:0; /* inget mellanrum, sitter tätt intill texten */
+  cursor:pointer;
+  font-size:0.95rem;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+}
+
+/* Aktiv markering: orange streck under aktiv nav-item */
+.nav-item.active::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 3px;
+}
+.dropdown-caret[aria-expanded="true"]{transform:rotate(180deg)}
+
+/* Dropdown menu */
+.dropdown-menu{
+  display:none;
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  border-radius:6px;
+  padding:0.25rem 0;
+  min-width:160px;
+  z-index:50;
+}
+.dropdown-menu li{list-style:none}
+.dropdown-link{display:block; padding:0.45rem 0.8rem; color:#222; text-decoration:none}
+.dropdown-link:hover{background:rgba(0,0,0,0.03)}
+.nav-item.open > .dropdown-menu{display:block}
+
+/* Footer contact */
+.site-footer .contact{margin-top:0.5rem; color:rgba(0,0,0,0.75); font-size:0.95rem}
+.site-footer .contact h4{margin:0 0 0.3rem 0}
+.site-footer a{color:var(--accent); text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+
+@media (max-width:600px){
+  .nav-list{flex-direction:column; gap:0.25rem}
+  .dropdown-menu{position:static; box-shadow:none; background:transparent; padding:0}
+  .dropdown-link{padding-left:1.25rem}
+}

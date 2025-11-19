@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MDU – ITE130 | Studentportal</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <!-- Logotypen flyttad in i nav nedan så den blir en del av navbaren -->
+        <!-- Navigation removed: buttons for "Student berättar" and "Om Git" were removed as requested -->
+      </div>
+      <nav class="main-nav" aria-label="Huvudnavigation">
+        <a class="brand" href="#" aria-label="Mälardalens universitets startsida">
+          <img src="images/Screenshot 2025-11-19 164033.png" alt="Mälardalens universitets logotyp" class="logo nav-logo" />
+        </a>
+        <ul class="nav-list">
+          <li class="nav-item dropdown active">
+            <a class="nav-link" href="#">Hem</a>
+            <button class="dropdown-caret" aria-expanded="false" aria-label="Öppna meny">▾</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-link" href="#start">Start</a></li>
+              <li><a class="dropdown-link" href="#nyheter">Nyheter</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#uppgifter">Uppgifter</a>
+            <button class="dropdown-caret" aria-expanded="false" aria-label="Öppna meny">▾</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-link" href="#uppgift1">Uppgift 1</a></li>
+              <li><a class="dropdown-link" href="#uppgift2">Uppgift 2</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#resurser">Resurser</a>
+            <button class="dropdown-caret" aria-expanded="false" aria-label="Öppna meny">▾</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-link" href="#lankar">Länkar</a></li>
+              <li><a class="dropdown-link" href="#dokument">Dokument</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#personer">Personer</a>
+            <button class="dropdown-caret" aria-expanded="false" aria-label="Öppna meny">▾</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-link" href="#larare">Lärare</a></li>
+              <li><a class="dropdown-link" href="#studenter">Studenter</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <main>
+      <section class="jumbotron">
+        <div class="container">
+          <h2>Välkommen till kursen ITE130</h2>
+          <p class="lead">Kursen om Interaktiva användargränssnitt</p>
+        </div>
+      </section>
+
+      <div class="container two-col">
+        <section id="overview" class="overview">
+          <h3>Kursöversikt</h3>
+          <p>Kursen innehåller grundläggande teoretisk och praktisk kunskap som när nödvändig för att planera för och göra prototyper av ett interaktivt system. Kursen behandlar och exemplifierar centrala typer av komponenter, användargränssnitt, interaktiva system, samt verktyg och metoder som används vid framtagning av interaktiva system. Kursen behandlar även kopplingen mellan ett interaktivt tekniskt system, tänkta användare och ett mer övergripande socio-tekniskt system.</p>
+        
+
+          <h3>Läromål</h3>
+          <ul>
+            <li>Redogöra för digitala systems uppbyggnad i förhållande till funktion, användare och kontext</li>
+            <li>Beskriva logik och relationer för funktionaliteten hos ett digitalt system</li>
+            <li>Utforma visuella användargränssnitt utifrån relevanta teorier inom interaktionsdesign</li>
+            <li>Tillämpa praktiska verktyg som används inom interaktionsdesign vid utformning av visuella användargränssnitt</li>
+            <li>Redogöra för hur ett digitalt system samspelar med mänskliga, tekniska och samhälleliga aspekter utifrån ett informationsdesignperspektiv</li>
+          </ul>
+        </section>
+
+        <aside id="schema" class="card fact-box">
+          <h3>Schema</h3>
+          <p>Översikt:</p>
+          <ul>
+            <li><strong>Vecka 1:</strong> Git & Github</li>
+            <li><strong>Vecka 2:</strong> CSS, Bootstrap, Vibe</li>
+           
+          </ul>
+        </aside>
+
+        <aside id="git" class="card fact-box">
+          <h3>Faktaruta: Git</h3>
+          <p><strong>Git</strong> är ett distribuerat versionshanteringssystem som hjälper dig hålla koll på ändringar i kod och samarbeta med andra. Några grundkommandon:</p>
+          <ul>
+            <li><code>git init</code> – starta ett repo</li>
+            <li><code>git add .</code> – lägg till ändringar</li>
+            <li><code>git commit -m "meddelande"</code> – spara en version</li>
+            <li><code>git push</code> / <code>git pull</code> – synka mot fjärrrepo</li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> MDU — ITE130</p>
+
+        <div class="contact">
+          <h4>Kontakt</h4>
+          <p>E-post: <a href="mailto:info@mdh.se">info@mdh.se</a></p>
+          <p>Telefon: +46 21 10 00 00</p>
+          <p>Adress: Mälardalens universitet, Box 883, 721 23 Västerås</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      // Dropdown toggle behaviour: click to open/close, close on outside click.
+      // Both the caret button and the nav text open/close the dropdown.
+      (function(){
+        const nav = document.querySelector('.main-nav');
+        if(!nav) return;
+
+        function closeAll(except){
+          nav.querySelectorAll('.nav-item.open').forEach(i => {
+            if(i!==except){
+              i.classList.remove('open');
+              const c = i.querySelector('.dropdown-caret'); if(c) c.setAttribute('aria-expanded','false');
+            }
+          });
+        }
+
+        nav.addEventListener('click', function(e){
+          // If clicking the caret button
+          const caret = e.target.closest('.dropdown-caret');
+          if(caret){
+            e.preventDefault();
+            const item = caret.closest('.nav-item');
+            const isOpen = item.classList.toggle('open');
+            caret.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            closeAll(isOpen ? item : null);
+            return;
+          }
+
+          // If clicking the nav link and it has a dropdown, toggle it as well
+          const link = e.target.closest('.nav-link');
+          if(link){
+            const item = link.closest('.nav-item');
+            const menu = item && item.querySelector('.dropdown-menu');
+            if(menu){
+              e.preventDefault();
+              const caretBtn = item.querySelector('.dropdown-caret');
+              const isOpen = item.classList.toggle('open');
+              if(caretBtn) caretBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+              closeAll(isOpen ? item : null);
+            }
+          }
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e){
+          if(!e.target.closest('.main-nav')){
+            nav.querySelectorAll('.nav-item.open').forEach(i => {
+              i.classList.remove('open');
+              const c = i.querySelector('.dropdown-caret'); if(c) c.setAttribute('aria-expanded','false');
+            });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

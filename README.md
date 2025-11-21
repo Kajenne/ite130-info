@@ -28,6 +28,7 @@ Bootstrap har flera olika versioner, det rekomdenderas att hålla sig till malla
      <img width="1187" height="593" alt="image" src="https://github.com/user-attachments/assets/41408ce1-de15-48dc-b7e6-d4d487aa8192" />
   5. Resultat:
      <img width="1919" height="983" alt="image" src="https://github.com/user-attachments/assets/484a971e-e7f6-4d9e-ade3-887ea4711276" />
+     
 ## Arbeta med Bootstrap 
 Bootstrap är färdiga mallar, men det är inte alltid önskvärt att de ska se ut på det sättet. I bootstrap är det enkelt att byta ut texter i mallarna, men hur fungerar det med CSS. I starmallen finns en CSS fil länkad i head-delen, den ersätter style. På Bootstrap finns det CSS koder, exempelvis för färg, koderna går att kistra in och fungerar utan style. Alternativt kan man fortfarande anpassa själv med sin egen style, antingen genom att länka en egen CSS fil eller skriva egen style.
     
